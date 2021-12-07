@@ -26,8 +26,4 @@ function calculateLeastConsumption(crabPositions) {
   );
 }
 
-const startTime = startTimer();
-const population = calculateLeastConsumption(positions);
-const endTime = endTimer(startTime);
-
-console.log(`${population} in ${endTime}ms`);
+console.log(calculateLeastConsumption(positions));

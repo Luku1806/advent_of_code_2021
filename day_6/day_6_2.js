@@ -1,5 +1,5 @@
 const fishList = require("./day_6_1_input.json");
-const { range } = require("../utils");
+const { range, startTimer, endTimer } = require("../utils");
 
 function toStates(fishList) {
   return fishList.reduce((map, fish) => {
@@ -28,4 +28,8 @@ function fishAfter(days, fishList) {
   return stateAfter(days, fishList).reduce((sum, current) => sum + current, 0);
 }
 
-console.log(fishAfter(256, fishList));
+const startTime = startTimer();
+const population = fishAfter(256, fishList);
+const endTime = endTimer(startTime);
+
+console.log(`${population} in ${endTime}ms`);
