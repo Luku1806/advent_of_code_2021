@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { range } = require('../utils')
 
 function toLines(input) {
   return input
@@ -23,12 +24,6 @@ function matrix(width, heigth, defaultValue = 0) {
   return Array(width)
     .fill(defaultValue)
     .map(() => Array(heigth).fill(defaultValue));
-}
-
-function range(start, end) {
-  return Array(Math.max(start, end) - Math.min(start, end) + 1)
-    .fill(0)
-    .map((_, index) => Math.min(start, end) + index);
 }
 
 function toCoordinatesOnLine(line) {
