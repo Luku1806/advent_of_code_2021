@@ -4,6 +4,10 @@ function range(start, end) {
     .map((_, index) => Math.min(start, end) + index);
 }
 
+function sum(array) {
+  return array.reduce((sum, current) => current + sum, 0);
+}
+
 // Stolen from Alexander Rose
 function startTimer() {
   return process.hrtime();
@@ -27,4 +31,5 @@ module.exports = {
   range,
   startTimer,
   endTimer,
+  sum,
 };
